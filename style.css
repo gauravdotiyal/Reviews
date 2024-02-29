@@ -20,27 +20,99 @@ main{
 {
     height: 0.25rem;
     width: 4rem;
-    background-color: blue; 
+    background-color:hsl(205, 78%, 60%); 
 }
 /* .img-container{
      display: flex;
      align-items: center;
      justify-content: center; 
 } */
-img{
+.img-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+  }
+#person-img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+  }
+  .img-container::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f10e";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    transform: translateY(25%);
+    background: hsl(205, 78%, 60%);
+    color: #fff;
+  }
+  .img-container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: hsl(205, 78%, 60%);
+    position: absolute;
+    top: -0.25rem;
+    right: -0.5rem;
+    border-radius: 50%;
+  }
+/* img{
     margin-top: 2vw;
     width: 12vw;
     height: 12vw;
     border-radius: 50%;
-}
+} */
 .review
 {
     height: 30vw;
-    background-color: red;
+    width: 30vw; 
+    box-shadow: -1px 1px 5px 2px rgba(0,0,0,0.15);
     display: flex;
      align-items: center;
      justify-content: center; 
-     flex-direction: column
+     flex-direction: column;
+     border-radius: 1.6rem;
+}
+#info,#job,#author{
+    margin:0 2vw ;
+}
+.button-container{
+    margin: 1.3vw 0 ; 
+}
+.button-container button:hover{
+    cursor: pointer;
+}
+.button-container button{
+    color: hsl(205, 78%, 60%);;
+    border: none;
+    background-color: inherit ;
+    font-size: 1.3rem;
+}
+.prev-btn{
+    margin-right: 1.5vw;
+}
+.random-btn{
+    background-color: white;
+    color: black;
+    padding: 0.3vw 1vw;
+    border-radius: 6px;
+}
+.random-btn:hover{
+    cursor:pointer;
+    background-color:hsl(205, 78%, 60%);;
 }
 
 
