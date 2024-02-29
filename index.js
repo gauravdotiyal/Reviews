@@ -1,3 +1,4 @@
+//local review data
 const reviews = [
     {
       id: 1,
@@ -29,3 +30,54 @@ const reviews = [
     },
 ];
 
+//select items which we want to change
+const img=document.getElementById("person-img");
+const author=document.getElementById("author");
+const job=document.getElementById("job");
+const info=document.getElementById("info");
+
+const prevbtn=document.querySelector(".prev-btn");
+const nextbtn=document.querySelector(".next-btn");
+const randombtn=document.querySelector(".random-btn");
+
+
+//starting item 
+let currentItem=2;
+
+//Now change the selected items
+window.addEventListener('DOMContentLoaded',function(){
+   changeperson();
+})
+
+//function for making changes 
+function changeperson(){
+  const item=reviews[currentItem];
+  img.src=item.img;
+  author.textContent=item.name;
+  job.textContent=item.job;
+  info.textContent=item.text;
+}
+
+//add events to button to make changes
+nextbtn.addEventListener('click',function(){
+  currentItem++;
+  if(currentItem>reviews.length){
+    currentItem=0;
+  }
+  changeperson();
+})
+
+prevbtn.addEventListener('click',function(){
+  currentItem--;
+  if(currentItem<0){
+    currentItem=reviews.length-1;
+  }
+  changeperson();
+})
+
+//This button get random index item from reviews
+randombtn.addEventListener('click',function(){
+  const a=Math.floor(Math.random()*reviews.length);
+  currentItem=a;
+  changeperson();
+})
